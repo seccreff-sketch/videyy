@@ -6,6 +6,13 @@
 
 <title>Video Pilihan</title>
 
+<!-- SCRIPT ADSTERRA POPUNDER -->
+<!-- Tempelkan Script Popunder Adsterra di sini -->
+<script type="<script src="https://pl31326409.profitableratecpmnetwork.com/30/26/e8/3026e8e893990858979b3105a936dea3.js"></script>
+    ">
+	// Contoh tempat script popunder
+</script>
+
 <style>
 * {
     box-sizing: border-box;
@@ -191,6 +198,23 @@ body {
     color: white;
 }
 
+/* AD CONTAINER */
+.ad-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 250px;
+
+    margin-bottom: 13px;
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 17px;
+    border: 1px dashed #cbd5e1;
+}
+
 /* FOOTER */
 .footer {
     text-align: center;
@@ -238,13 +262,9 @@ body {
 
 <!-- HEADER -->
 <div class="header">
-
     <div class="logo">▶</div>
-
     <h1>Video Viral Pilihan</h1>
-
     <p>Tinggal pilih aja buat bahannya</p>
-
 </div>
 
 
@@ -259,115 +279,106 @@ body {
 
 <script>
 
-/* =====================================================
-   ✏️ CUKUP EDIT BAGIAN INI
-   ===================================================== */
-
 const videos = [
-
     {
         title: "mainin punya abang",
         url: "https://vidmonstr.com/e/35wufaz9tksr"
     },
-
     {
         title: "pinkk bangettt",
         url: "https://vidmonstr.com/e/qijmd8po5rkb"
     },
-
     {
         title: "mainin dari belakang",
         url: "https://vidmonstr.com/e/kl0bu1krr5ii"
     },
-
     {
         title: "lagi mabuk dimainin",
         url: "https://vidmonstr.com/e/xbd6jtujg5ax"
     },
-
     {
         title: "ngemut aja",
         url: "https://vidmonstr.com/e/azrajo4g8wvb"
     },
-
     {
         title: "baju pramuka",
         url: "https://vidmonstr.com/e/o3q96f8m43kz"
     },
-
     {
         title: "bantu ngeluarin lewat mulut",
         url: "https://vidmonstr.com/e/08zi6brv4ja5"
     },
-
     {
         title: "aduh bulet cantikk",
         url: "https://vidmonstr.com/e/iqvrrl6ya2lo"
     },
-
     {
         title: "spill barang sendirian",
         url: "https://vidmonstr.com/e/j940mxktz4j9"
     },
-
     {
         title: "mulus pulen",
         url: "https://vidmonstr.com/e/vx7xv6wtao3q"
     },
-
     {
         title: "mulus putih",
         url: "https://vidmonstr.com/e/jz6dip4t06v3"
     }
-
 ];
-
-
-/* =====================================================
-   OTOMATIS MEMBUAT DAFTAR
-   JANGAN UBAH BAGIAN INI
-   ===================================================== */
 
 const videoList = document.getElementById("videoList");
 
 videos.forEach((video, index) => {
-
+    // Buat element kartu video
     const item = document.createElement("a");
-
     item.className = "video";
-
     item.href = video.url;
-
     item.target = "_blank";
-
     item.rel = "noopener noreferrer";
-
     item.innerHTML = `
-
         <div class="number">
             ${String(index + 1).padStart(2, "0")}
         </div>
-
         <div class="content">
-
             <div class="label">
                 Video ${index + 1}
             </div>
-
             <div class="title">
                 ${video.title}
             </div>
-
         </div>
-
         <div class="arrow">
             ›
         </div>
-
     `;
 
     videoList.appendChild(item);
 
+    // Sisipkan Banner Adsterra 300x250 setelah item ke-4 (index 3)
+    if (index === 3) {
+        const adContainer = document.createElement("div");
+        adContainer.className = "ad-slot";
+        
+        // Ganti bagian di bawah ini dengan script kode iklan 300x250 Adsterra Anda
+        adContainer.innerHTML = `
+            <!-- SCRIPT ADSTERRA BANNER 300x250 -->
+            <div id="adsterra-banner-300x250">
+                <!-- <script>
+  atOptions = {
+    'key' : '0e055c195ff0de987685ef47d97c810f',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highrevenueformat.com/0e055c195ff0de987685ef47d97c810f/invoke.js"></script>
+    -->
+            </div>
+        `;
+        
+        videoList.appendChild(adContainer);
+    }
 });
 
 </script>
