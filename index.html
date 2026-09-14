@@ -1,120 +1,352 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Video Viral Pilihan</title>
-    
-    <script src="https://pl31326409.profitableratecpmnetwork.com/30/26/e8/3026e8e893990858979b3105a936dea3.js"></script>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --bg: #101114;
+            --card: #181a1f;
+            --card-hover: #1e2127;
+            --border: #292d35;
+            --text: #f1f3f5;
+            --muted: #8d939d;
+            --accent: #8b9cff;
         }
 
         body {
-            background-color: #f5f6f8; 
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #202431 0%,
+                    #101114 45%,
+                    #0c0d0f 100%
+                );
+
+            color: var(--text);
             min-height: 100vh;
-            padding: 20px 15px;
+            padding: 35px 16px;
         }
 
         .container {
             width: 100%;
-            max-width: 480px;
-            text-align: center;
+            max-width: 500px;
+            margin: auto;
         }
 
+        /* HEADER */
+
         .header {
-            margin-bottom: 25px;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .logo {
+            width: 52px;
+            height: 52px;
+            margin: 0 auto 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+            background: #20232b;
+            border: 1px solid #303541;
+
+            font-size: 22px;
         }
 
         .header h1 {
-            font-size: 1.6rem;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 6px;
-            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin-bottom: 7px;
         }
 
         .header p {
-            font-size: 0.9rem;
-            color: #666;
+            color: var(--muted);
+            font-size: 14px;
         }
+
+        /* LINK LIST */
 
         .link-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 11px;
         }
 
         .link-item {
-            display: block;
-            background: #fff;
-            color: #1a1a1a;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            min-height: 62px;
+            padding: 14px 17px;
+
+            background: rgba(24, 26, 31, 0.94);
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+
+            color: var(--text);
             text-decoration: none;
-            padding: 18px 22px;
-            border-radius: 12px;
-            border: 1px solid #e0e4e8;
-            font-size: 1rem;
-            font-weight: 500;
-            text-align: left;
-            box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
+
+            cursor: pointer;
+
+            /* Animasi halus */
+            transition:
+                transform 0.12s ease,
+                background 0.18s ease,
+                border-color 0.18s ease,
+                box-shadow 0.18s ease;
         }
 
+        /* Saat disentuh / hover */
         .link-item:hover {
-            border-color: #38bdf8;
             transform: translateY(-2px);
-            box-shadow: 0 8px 12px -3px rgba(56, 189, 248, 0.1);
+            background: var(--card-hover);
+            border-color: #3a4050;
+
+            box-shadow:
+                0 7px 20px rgba(0, 0, 0, 0.18);
         }
+
+        /* Efek CLICKY */
+        .link-item:active {
+            transform: scale(0.94);
+            background: #22252c;
+            transition: transform 0.06s ease;
+        }
+
+        /* Efek ripple */
+
+        .link-item::after {
+            content: "";
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            width: 10px;
+            height: 10px;
+
+            background: rgba(139, 156, 255, 0.18);
+
+            border-radius: 50%;
+
+            transform: translate(-50%, -50%) scale(0);
+
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .link-item:active::after {
+            animation: ripple 0.45s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(28);
+                opacity: 0;
+            }
+        }
+
+        .number {
+            width: 34px;
+            height: 34px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-right: 13px;
+
+            border-radius: 10px;
+
+            background: #22252c;
+            color: #aeb5c2;
+
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .link-text {
+            flex: 1;
+
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .arrow {
+            margin-left: 10px;
+
+            color: #686f7b;
+            font-size: 20px;
+
+            transition:
+                transform 0.18s ease,
+                color 0.18s ease;
+        }
+
+        .link-item:hover .arrow {
+            transform: translateX(4px);
+            color: var(--accent);
+        }
+
+        /* BANNER */
 
         .ad-banner-container {
+            width: 100%;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 6px 0;
-            width: 100%;
-            overflow: hidden;
+
+            margin: 20px 0;
         }
 
         .ad-banner-300x250 {
             width: 300px;
             height: 250px;
-            background-color: #eaeff4;
-            border-radius: 8px;
+
             display: flex;
-            justify-content: center;
             align-items: center;
-            border: 1px dashed #ced4da;
+            justify-content: center;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+
+            background: #15171b;
+            border: 1px solid #292d35;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+            margin-top: 28px;
+
+            color: #626873;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 480px) {
+
+            body {
+                padding: 25px 13px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .link-item {
+                min-height: 59px;
+                padding: 13px 14px;
+            }
+
+            .link-text {
+                font-size: 14px;
+            }
+
+            .number {
+                width: 32px;
+                height: 32px;
+                margin-right: 11px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="header">
+    <main class="container">
+
+        <header class="header">
+
+            <div class="logo">▶</div>
+
             <h1>Video Viral Pilihan</h1>
-            <p>Pilih dan klik salah satu video di bawah ini</p>
-        </div>
 
-        <div class="link-list">
-            
-            <a href="https://vidmonstr.com/e/35wufaz9tksr" class="link-item" target="_blank">01. mainin punya abang</a>
-            <a href="https://vidmonstr.com/e/qijmd8po5rkb" class="link-item" target="_blank">02. pinkk bangettt</a>
-            <a href="https://vidmonstr.com/e/kl0bu1krr5ii" class="link-item" target="_blank">03. mainin dari belakang</a>
-            <a href="https://vidmonstr.com/e/xbd6jtujg5ax" class="link-item" target="_blank">04. lagi mabuk dimainin</a>
-            <a href="https://vidmonstr.com/e/azrajo4g8wvb" class="link-item" target="_blank">05. ngemut aja</a>
+            <p>Enak semua bahannya</p>
 
+        </header>
+
+
+        <section class="link-list">
+
+            <!-- LINK 01 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">01</span>
+                <span class="https://vidmonstr.com/e/35wufaz9tksr">Judul Video 01</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 02 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">02</span>
+                <span class="https://vidmonstr.com/e/qijmd8po5rkb">Pink bangett</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 03 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">03</span>
+                <span class="https://vidmonstr.com/e/kl0bu1krr5ii">Main dari belakang</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 04 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">04</span>
+                <span class="https://vidmonstr.com/e/xbd6jtujg5ax">Disikat lagi ngefly</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 05 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">05</span>
+                <span class="https://vidmonstr.com/e/azrajo4g8wvb">Ngemut aja</span>
+                <span class="arrow">›</span>
+            </a>
+
+
+            <!-- BANNER SETELAH LINK 05 -->
             <div class="ad-banner-container">
+
                 <div class="ad-banner-300x250">
-                    
+
                     <script>
   atOptions = {
     'key' : '0e055c195ff0de987685ef47d97c810f',
@@ -125,22 +357,63 @@
   };
 </script>
 <script src="https://www.highrevenueformat.com/0e055c195ff0de987685ef47d97c810f/invoke.js"></script>
-
                     
+
                 </div>
+
             </div>
 
-            <a href="https://vidmonstr.com/e/o3q96f8m43kz" class="link-item" target="_blank">06. baju pramuka</a>
-            <a href="https://vidmonstr.com/e/08zi6brv4ja5" class="link-item" target="_blank">07. bantu ngeluarin lewat mulut</a>
-            <a href="https://vidmonstr.com/e/iqvrrl6ya2lo" class="link-item" target="_blank">08. aduh bulet cantikk</a>
-            <a href="https://vidmonstr.com/e/j940mxktz4j9" class="link-item" target="_blank">09. spill barang sendirian</a>
-            <a href="https://vidmonstr.com/e/vx7xv6wtao3q" class="link-item" target="_blank">10. mulus pulen</a>
-            <a href="https://vidmonstr.com/e/jz6dip4t06v3" class="link-item" target="_blank">11. mulus putih</a>
 
-        </div>
-    </div>
+            <!-- LINK 06 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">06</span>
+                <span class="https://vidmonstr.com/e/o3q96f8m43kz">Baju pramuka</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 07 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">07</span>
+                <span class="https://vidmonstr.com/e/08zi6brv4ja5">Bantu lewat mulut</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 08 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">08</span>
+                <span class="https://vidmonstr.com/e/iqvrrl6ya2lo">Bulet sempurna</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 09 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">09</span>
+                <span class="https://vidmonstr.com/e/j940mxktz4j9">Spill barang sendirian</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 10 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">10</span>
+                <span class="https://vidmonstr.com/e/vx7xv6wtao3q">Mulus pulen</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <!-- LINK 11 -->
+            <a href="#" class="link-item" target="_blank" rel="noopener">
+                <span class="number">11</span>
+                <span class="https://vidmonstr.com/e/jz6dip4t06v3">Mulus putih/span>
+                <span class="arrow">›</span>
+            </a>
+
+        </section>
+
+
+        <footer class="footer">
+            © 2026 Video Viral
+        </footer>
+
+    </main>
 
 </body>
-</html>
-
-```
+                    </html>
